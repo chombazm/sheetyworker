@@ -17,7 +17,7 @@ export const dataRowValidator = (
   expectedRows: HeaderRow[]
 ): boolean => {
   if (!row) {
-    throw new Error('Row is empty');
+    false;
   }
 
   // some objects of expectedRows are required to be present in the row array, so validate that if the required property is true
@@ -27,9 +27,10 @@ export const dataRowValidator = (
       const index = expectedRows.indexOf(expectedRow);
       // check if row[index] is empty
       if (!row[index]) {
-        throw new Error(
-          `Row is missing required column: ${expectedRow.column}`
-        );
+        return false;
+        // throw new Error(
+        //   `Row is missing required column: ${expectedRow.column}`
+        // );
       }
     }
   }

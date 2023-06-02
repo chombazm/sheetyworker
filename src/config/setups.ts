@@ -34,7 +34,7 @@ export const expectedRows = [
   {
     column: 'incorrectAnswer2',
     type: 'string',
-    required: true,
+    required: false,
   },
   {
     column: 'incorrectAnswer3',

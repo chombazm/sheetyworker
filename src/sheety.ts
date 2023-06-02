@@ -35,9 +35,30 @@ async function insertDataIntoDatabase(data: string[][], db: any) {
   data.shift();
 
   for (const row of data) {
-    if (dataRowValidator(row, expectedRows)) {
-      // console.log('row is valid');
+    // get row number
+    const rowNumber = data.indexOf(row) + 1;
+    if (!dataRowValidator(row, expectedRows)) {
+      console.error(
+        `Row ${rowNumber} is invalid or missing required data, skipping...`
+      );
+      continue;
     }
+
+    const document = {
+      level: row[0],
+      subject: row[1],
+      topic: row[2],
+      question: row[3],
+      correctAnswer: row[4],
+      incorrectAnswer1: row[5],
+      incorrectAnswer2: row[6],
+      incorrectAnswer3: row[7],
+      howToSolve: row[8],
+      type: row[9],
+      learningObjective: row[10],
+    };
+
+    console.log(document, '\n');
     // validate row before inserting into database
     // await collection.insertOne(document);
   }
