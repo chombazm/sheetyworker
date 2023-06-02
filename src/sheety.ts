@@ -1,9 +1,9 @@
 import {google} from 'googleapis';
 import {MongoClient} from 'mongodb';
 import {dataRowValidator, headerRowValidator} from './utils/validators';
-import {expectedRows} from '../config/setups';
+import {expectedRows} from './config/setups';
 
-const credentials = require('../config/credentials.json');
+const credentials = require('');
 
 async function readGoogleSheet() {
   const auth = new google.auth.GoogleAuth({
