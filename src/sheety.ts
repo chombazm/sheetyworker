@@ -58,9 +58,7 @@ async function insertDataIntoDatabase(data: string[][], db: any) {
       learningObjective: row[10],
     };
 
-    console.log(document, '\n');
-    // validate row before inserting into database
-    // await collection.insertOne(document);
+    await collection.insertOne(document);
   }
 }
 
