@@ -1,9 +1,9 @@
 import {google} from 'googleapis';
 import {MongoClient} from 'mongodb';
 import {dataRowValidator, headerRowValidator} from './utils/validators';
-import {expectedRows} from './config/setups';
+import {expectedRows} from '../config/setups';
 
-const credentials = require('./config/credentials.json');
+const credentials = require('../config/credentials.json');
 
 async function readGoogleSheet() {
   const auth = new google.auth.GoogleAuth({
@@ -51,7 +51,6 @@ async function insertDataIntoDatabase(data: string[][], db: any) {
       question: row[3],
       correctAnswer: row[4],
       incorrectAnswer1: row[5],
-      incorrectAnswer2: row[6],
       incorrectAnswer3: row[7],
       howToSolve: row[8],
       type: row[9],
@@ -61,7 +60,6 @@ async function insertDataIntoDatabase(data: string[][], db: any) {
     await collection.insertOne(document);
   }
 }
-
 async function main() {
   try {
     const data = (await readGoogleSheet()) as string[][];

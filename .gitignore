@@ -9,7 +9,11 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
+# GCP credentials file (https://cloud.google.com/docs/authentication/getting-started)
+confg/credentials
+
 
 # Thumbnails
 ._*

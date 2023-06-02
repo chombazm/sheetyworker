@@ -14,7 +14,7 @@
     "typescript": "^5.0.4"
   },
   "scripts": {
-    "start": "tsc && node dist/sheety.js",
+    "start": "tsc && node build/src/sheety.js",
     "dev": "ts-node-dev --respawn --transpile-only src/sheety.ts --watch",
     "lint": "gts lint",
     "clean": "gts clean",
