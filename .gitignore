@@ -12,7 +12,7 @@
 Icon
 
 # GCP credentials file (https://cloud.google.com/docs/authentication/getting-started)
-confg/credentials
+confg/credentials.json
 
 
 # Thumbnails
